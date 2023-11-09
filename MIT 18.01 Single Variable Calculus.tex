@@ -4,6 +4,7 @@
 \documentclass[10pt, a4paper]{article}
 \usepackage[UTF8]{ctex}
 \usepackage[top=3cm, bottom=4cm, left=3.5cm, right=3.5cm]{geometry}
+\usepackage{sectsty} %设置章节标题的字体大小
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd, fancyhdr, color, comment, graphicx, environ}
 \usepackage{float}
 \usepackage{mathrsfs}
@@ -17,11 +18,11 @@
 \usepackage{fancyhdr}
 \usepackage{indentfirst}
 \usepackage{listings}
-\usepackage{sectsty}
 \usepackage{thmtools}
 \usepackage{shadethm}
 \usepackage{hyperref}
 \usepackage{setspace}
+\usepackage{anyfontsize} %字体大小
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -458,12 +459,111 @@ According to the equation above, we can calculate the following approximations:
     \item \textbf{Check \(f''(x)\):} concave up or down?
 \end{enumerate}
 
+\subsection*{Part B: Optimization, Related Rates and Newton's Method}
+\begin{Problem}
+    Find the box (without a top) with least surface area for a fixed volume.[square bottom]
+\end{Problem}
+\begin{Solution}
+    \textbf{[Direct Solution]}
+    Let x denote width and length, y denote height. We have the
+    \textit{constraint} that the box must have a certain volume:
+    \[y = \frac{V}{x^2}\]
+    The surface of the box can be written as:
+    \[A(x)\quad=\quad x^2+\frac{4V}x\]
+    To find the critical points we take the derivative of $A(x)$ and set it equal to zero.
+    \begin{align*}
+        A^{\prime}(x)\quad &= \quad2x-\frac{4V}{x^2} = 0 \\
+        x &= (2V)^{\frac{1}{3}}
+    \end{align*}
+    Then we can check end points and obtain the final answer (Here we use dimensionless variables):
+    \[\frac{x}{y} = 2\]
+    \textbf{[Implicit Solution]}
+    \[\frac d{dx}V=2xy+x^2\frac{dy}{dx}\Longrightarrow0=2xy+x^2y^{\prime}\]
+\end{Solution}
 
+\begin{Problem}
+    \textbf{Related Rates, A Conical Tank} \\
+    Consider a conical tank whose radius at the top is 4 feet and whose
+    depth is 10 feet. It's being filled with water at the rate of 2 cubic feet per
+    minute. How fast is the water level rising when it is at depth 5 feet?
+\end{Problem}
 
+\begin{Solution}
+    The volume of a cone is $\frac13\pi r^2h$. We have: 
+    \[V=\frac13\cdot\underbrace{\pi r^2}_{\mathrm{base}}\cdot\underbrace{h}_{\mathrm{height}}\]\
+    We can use the Chain Rule to find the rate of change of height with respect to time:
+    \begin{align*}
+        \frac{dV}{dt}& \begin{aligned}=\quad\frac{dV}{dh}\frac{dh}{dt}\end{aligned}  \\
+        &=\quad\frac\pi3\left(\frac25\right)^23h^2\frac{dh}{dt} \\
+        &=\quad\frac4{25}\pi h^2h^{\prime}
+    \end{align*}
+    We know that $V' = 2$ and $h = 5$ when we want to find $h^{\prime}$, so we can plug these values in:
+    \begin{align*}
+        2&=\quad\frac4{25}\pi\cdot5^2\cdot h^{\prime} \\
+        h^{\prime}&=\quad\frac{1}{2\pi} 
+    \end{align*}
+\end{Solution}
 
+\begin{theorem}
+    \textbf{Newton's Method} \\
+    Newton's method is a way to approximate the roots of a function. 
+    It is based on the idea that if $x$ is close to a root of $f$, then $f(x)$ is close to 0. 
+    So we can approximate the root by finding the $x$-intercept of the tangent line to the graph of $f$ at $(x, f(x))$.
+    \[x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}\]
+    The size of the error is proportional to the square of the size of the previous error. Newton's method works well if the initial guess is close to the root.
+\end{theorem}
 
+\subsection*{Part C: Mean Value Theorem, Antiderivatives and Differential Equations}
+\begin{theorem}
+    \textbf{Mean Value Theorem} \\
+    If $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then there exists a point $c$ in $(a, b)$ such that:
+    \[\boxed{f'(c)=\frac{f(b)-f(a)}{b-a}}\]
+\end{theorem}
 
+\subsubsection*{The Mean Value Theorem and Linear Approximation}
+The linear approximation of $f$ at $x = a$ has the formula:
+\[f(x)\approx f(a)+f'(a)(x-a)\]
+If we let $\Delta x = x - a$, then we can rewrite this as:
+\[\frac{\Delta Y}{\Delta X} \approx f'(a)\]
+Similarly, the Mean Value Theorem says that:
+\[\exists c \in (a, b) \quad s.t. \quad f(b) = f(a) + f'(c)(b - a)\]
+which can be rewritten as:
+\[\exists c \in (a, b) \quad s.t. \quad \frac{\Delta Y}{\Delta X} = f'(c)\]
+The average change in $y$ over an interval is between the maximum and minimum values of $f'(x)$. 
+During a trip, the average speed of a car is between the maximum and minimum speeds:
+\[\min_{a\leq x\leq b}f'(x)\leq\frac{f(b)-f(a)}{b-a}=f'(c)\leq\max_{a\leq x\leq b}f'(x)\]
 
+\begin{definition}
+    \textbf{Differential} \\
+    The differential of a function $y = f(x)$ is defined as:
+    \[dy = f'(x)dx\]
+\end{definition}
+\ast  Recall the relation between differentials and linear approximation
+
+\begin{definition}
+    \textbf{Antiderivative} \\
+    $G(x) = \int g(x)dx$ is an antiderivative of $g(x)$. Other ways of writing antiderivatives are:
+    \[G'(x) = g(x)\quad\text{or}\quad dG = g(x)dx\]
+\end{definition}
+
+\begin{example}
+    \textbf{Antiderivative of $\frac{1}{x}$}
+    \begin{align*}
+        \int\frac{1}{x}dx &= \int x^{-1}dx \\
+        &= \ln|x| + c
+    \end{align*}
+\end{example}
+
+\subsubsection*{Antiderivatives are Unique up to a Constanttitle}
+\begin{theorem}
+    If $F'(x) = f(x)$ and $G'(x) = f(x)$, then \boxed{$F(x) = G(x) + c$} for some constant $c$.
+    \begin{proof}
+        If $F'(x) = G'(x)$, then $(F - G)'(x) = 0$. By the \textbf{Mean Value Theorem}, $\exists c$ such that
+        $G(x) - F(x) = c$. So $G(x) = F(x) + c$.
+    \end{proof}  
+\end{theorem}
+
+This is a very important fact. It's the basis for calculus; the reason why it makes sense to do calculus at all.
 
 
 
