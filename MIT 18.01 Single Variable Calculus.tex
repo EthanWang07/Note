@@ -134,10 +134,13 @@ innertopmargin=\topskip,
 \begin{document}
 \include{Title page for notes}
 
-\section*{Unit 1: Differentiation}
+\tableofcontents
+\newpage
+
+\section{Differentiation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Part A: Definition and Basic Rules}
+\subsection{Definition and Basic Rules}
 
 \begin{definition}
     The derivative $f'(x_0)$ of $f$ at $x_0$ is the slope of the tangent line
@@ -318,7 +321,7 @@ Higher derivatives are derivatives of derivatives.
 The symbol $\frac{d}{dx}$ represent “operators” which can be applied to a function. 
 This explains why the two powers are in different locations.
 
-\subsection*{Part B: Implicit Differentiation and Inverse Functions}
+\subsection{Implicit Differentiation and Inverse Functions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Implicit Differentiation (Rational Exponent Rule)}
@@ -391,10 +394,10 @@ This explains why the two powers are in different locations.
     \[\frac d{dx}x^x\quad=\quad x^x(1+\ln x)\]
 \end{example}
     
-\section*{Unit 2: Applications of Differentiation}
+\section{Applications of Differentiation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Part A: Approximation and Curve Sketching}
+\subsection{Approximation and Curve Sketching}
 \subsubsection*{Linear Approximation}
 \begin{example}
     \textbf{Linear Approximation to lnx at $x=1$} \\
@@ -459,7 +462,7 @@ According to the equation above, we can calculate the following approximations:
     \item \textbf{Check \(f''(x)\):} concave up or down?
 \end{enumerate}
 
-\subsection*{Part B: Optimization, Related Rates and Newton's Method}
+\subsection{Optimization, Related Rates and Newton's Method}
 \begin{Problem}
     Find the box (without a top) with least surface area for a fixed volume.[square bottom]
 \end{Problem}
@@ -513,7 +516,7 @@ According to the equation above, we can calculate the following approximations:
     The size of the error is proportional to the square of the size of the previous error. Newton's method works well if the initial guess is close to the root.
 \end{theorem}
 
-\subsection*{Part C: Mean Value Theorem, Antiderivatives and Differential Equations}
+\subsection{Mean Value Theorem, Antiderivatives and Differential Equations}
 \begin{theorem}
     \textbf{Mean Value Theorem} \\
     If $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, then there exists a point $c$ in $(a, b)$ such that:
@@ -577,17 +580,57 @@ During a trip, the average speed of a car is between the maximum and minimum spe
     This function is known as the normal distribution.
 \end{example}
 
-\section*{Unit 3: The Definite Integral and its Applications}
-\subsection*{Part A: Definition of the Definite Integral and First Fundamental Theorem}
+\section{The Definite Integral and its Applications}
+\subsection{Definition of the Definite Integral and First Fundamental Theorem}
 \begin{definition}
-    \textbf{Definite Integral} \\
-    The definite integral of $f$ from $a$ to $b$ is:
-    \[\int_a^bf(x)dx = \lim_{n\to\infty}\sum_{i=1}^nf(x_i^*)\Delta x\]
-    where $x_i^*$ is any point in the $i$th subinterval $[x_{i-1}, x_i]$.
+    \textbf{Riemann Sum} \\
+    Let $f$ be a function defined on $[a, b]$. The general procedure for computing the definite integral 
+    $\int_a^bf(x)dx$ is to approximate the area under the curve $y = f(x)$ by the sum of the areas of rectangles:
+    \[S_n = \sum_{i=1}^nf(x_i^*)\Delta x\]
+    where $\Delta x = \frac{b - a}{n}$ and $x_i^*$ is any point in the $i$th subinterval $[x_{i-1}, x_i]$.\\
+    In the limit as n goes to infinity, this sum approaches the value of the definite integral:
+    \[\lim_{n\to\infty}S_n = \int_a^bf(x)dx\]
 \end{definition}
 
+\subsubsection*{The Fundamental Theorem of Calculus}
+\begin{theorem}
+    \textbf{First Fundamental Theorem of Calculus} \\
+    If $f$ is continuous on $[a, b]$ and $F'(x) = f(x)$ for all $x$ in $[a, b]$, then:
+    \[\boxed{\int_a^bf(x)dx = F(b) - F(a) = F(x) \Big|_a^b}\]
+\end{theorem}
 
+\begin{Problem}
+    \textbf{Area under one “hump” of sin(x).}
+\end{Problem}
+\begin{Solution}
+    \begin{align*}
+        \int_0^{\pi}\sin xdx &= -\cos x\Big|_0^{\pi} \\
+        &= -\cos\pi + \cos0 \\
+        &= 2
+    \end{align*}
+\end{Solution}
 
+\subsubsection*{An Interpretation of the Fundamental Theorem of Calculus}
+\textbf{Speed and distance are very helpful in understanding the definite integral!!! } \\
+Let t denote time, $v(t)$ denote velocity, and $s(t)$ denote distance. Then:
+\[\int_a^b v(t)dt = s(b) - s(a)\] 
+It's very reasonable to think that the distance traveled is the area under the velocity curve.
+\[\sum_{i=1}^nv(t_i)\Delta t\approx\int_a^bv(t)dt\]
+The Riemann sum, on the left, is approximately how far the object travels, and the definite integral, on the right, is the exact distance traveled.
+
+\subsubsection*{Properties of Integrals}
+\begin{enumerate}
+    \item \[ \int_a^b[f(x) + g(x)]dx = \int_a^bf(x)dx + \int_a^bg(x)dx\]
+    \item \[ \int_a^b cf(x)dx = c\int_a^bf(x)dx \]
+    \item \[ \int_a^b f(x)dx + \int_b^c f(x)dx = \int_a^c f(x)dx \]
+    \item \[ \int_a^a f(x)dx = 0\]
+    \item \[ \int_a^b f(x)dx = -\int_b^a f(x)dx \]
+    \item (Estimation) If $f(x) \leq g(x)$ and $a < b$, then:
+    \[ \int_a^b f(x)dx \leq \int_a^b g(x)dx \]
+    \item (Change of Variables or “Substitution”) If $u = u(x) $ then $du = u'(x)$ and $\int g(u)du = \int g(u(x))u'(x)dx$.
+    \[ \int_{u_1}^{u_2}g(u)du=\int_{x_1}^{x_2}g(u(x))u^{\prime}(x)dx \]
+    where $u'$ does not change sign. (If it does, we need to split the integral into pieces.)
+\end{enumerate}
 
 
 
