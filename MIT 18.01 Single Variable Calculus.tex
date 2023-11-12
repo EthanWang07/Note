@@ -9,7 +9,7 @@
 \usepackage{float}
 \usepackage{mathrsfs}
 \usepackage[math-style=ISO]{unicode-math}
-\setmathfont{TeX Gyre Termes Math}
+\setmathfont{Latin Modern Math}
 \usepackage{lastpage}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[framemethod=TikZ]{mdframed}
@@ -563,13 +563,28 @@ During a trip, the average speed of a car is between the maximum and minimum spe
     \end{proof}  
 \end{theorem}
 
-This is a very important fact. It's the basis for calculus; the reason why it makes sense to do calculus at all.
+"This is a very important fact. It's the basis for calculus; the reason why it makes sense to do calculus at all."
 
+\subsubsection*{Introduction to Ordinary Differential Equations}
+\begin{example}
+    \textbf{$\frac{dy}{dx} + xy  = 0$} \\
+    The first step to solve it is to separate $\frac{dy}{dx}$:
+    \[\frac{dy}{y} = -xdx\]
+    Then we integrate both sides:
+    \[\int\frac{dy}{y} = \int-xdx\]\
+    \[\ln y = -\frac{x^2}{2} + c \quad\text{assume } y > 0\]
+    \[ y\quad=\quad Ae^{-x^2/2}\quad(A=e^c) \]
+    This function is known as the normal distribution.
+\end{example}
 
-
-
-
-
+\section*{Unit 3: The Definite Integral and its Applications}
+\subsection*{Part A: Definition of the Definite Integral and First Fundamental Theorem}
+\begin{definition}
+    \textbf{Definite Integral} \\
+    The definite integral of $f$ from $a$ to $b$ is:
+    \[\int_a^bf(x)dx = \lim_{n\to\infty}\sum_{i=1}^nf(x_i^*)\Delta x\]
+    where $x_i^*$ is any point in the $i$th subinterval $[x_{i-1}, x_i]$.
+\end{definition}
 
 
 

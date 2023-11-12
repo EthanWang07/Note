@@ -1,0 +1,39 @@
+\documentclass[10pt, a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage[top=3cm, bottom=4cm, left=3.5cm, right=3.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd, fancyhdr, color, comment, graphicx, environ} % Mathtools
+\usepackage{float}
+\usepackage{mathrsfs}
+\usepackage[math-style=ISO]{unicode-math}
+\setmathfont{Latin Modern Math}
+\usepackage{anyfontsize} %字体大小
+\usepackage{tikz} %画图
+
+\begin{document}
+
+\section*{Randomized Trials (随机实验)} 
+\boxed{\text{Causal Effect (因果效应): } Y_{1i} - Y_{0i}} \\
+
+If we want to find the causal effect of a treatment, naturally we need to compare the outcome of the treatment group and the control group.\\
+First we can construct a dummy variable $D_i$ to indicate whether the $i$-th component is in the treatment group or the control group:
+\[D_i = \begin{cases}
+1, & \text{if the $i$-th component is in the treatment group} \\
+0, & \text{if the $i$-th component is in the control group}
+\end{cases}\]
+
+\[\text{Diffenence in group means} = Avg_n[Y_{1i} \mid D_i = 1] - Avg_n[Y_{0i} \mid D_i = 0] \]
+But this equation is not what we are looking for. (Why?) We use \kappa to denote the effect of the treatment, then we have:
+\[ Y_{1i} = Y_{0i} + \kappa \]
+\begin{align*}
+    \text{Diffenence in group means} &= Avg_n[Y_{1i} \mid D_i = 1] - Avg_n[Y_{0i} \mid D_i = 0] \\
+    &= {\kappa + Avg_n[Y_{0i} \mid D_i = 1]} - Avg_n[Y_{0i} \mid D_i = 0] \\
+    &= \kappa + \{Avg_n[Y_{0i} \mid D_i = 1] - Avg_n[Y_{0i} \mid D_i = 0]\}
+\end{align*}
+According to this, the difference between the two groups can be written as:
+\[\boxed{\text{Diffenence in group means} = \text{Average causal effect} + \text{Section bias (选择偏误)}}\]  
+
+\subsection*{统计推断基础}
+样本均值的无偏性：$E[\bar{Y}] = E[Y_i]
+
+
+\end{document}
