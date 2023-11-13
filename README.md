@@ -3,3 +3,5 @@
 基于lecture进行整理
 
 2023/11/11- [Econometrics]
+
+基于 *Mastering 'Metrics: The Path from Cause to Effect*
