@@ -2,7 +2,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Packages
 \documentclass[10pt, a4paper]{article}
-\usepackage[UTF8]{ctex}
 \usepackage[top=3cm, bottom=4cm, left=3.5cm, right=3.5cm]{geometry}
 \usepackage{sectsty} %设置章节标题的字体大小
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd, fancyhdr, color, comment, graphicx, environ}
@@ -39,7 +38,7 @@ An \textit{inhomogeneous linear} differential equation has the form
 L[v ] = f,
 \end{align}
 where $L$ is a linear differential operator, $v$ is the dependent
-variable, and $f$ is a given non−zero function of the independent
+variable, and $f$ is a given non-zero function of the independent
 variables alone.
 }
 \mdfdefinestyle{theoremstyle}{%
@@ -252,7 +251,7 @@ The derivatives $\frac{dy}{dx}$ can also be taken as the instantaneous rate of c
         &= f'(x_0)\cdot 0\\
         &= 0
     \end{align*}
-    （we used the assumption that $f$ was differentiable when we wrote down $f'(x)$.）
+    (we used the assumption that $f$ was differentiable when we wrote down $f'(x)$.)
 \end{proof}
 
 \subsubsection*{Derivative of $\sin x$ and $\cos x$, Algebraic Proof}
@@ -357,7 +356,7 @@ This explains why the two powers are in different locations.
 \begin{example}
     \textbf{Derivative of the Inverse of a Function}\\
     If $f(x) = y$ and $g(y) = x$, then $g$ is the inverse of $f$ ($g = f^{-1}$) and $f$ is the inverse of $g$.
-    The graph of $f ^{−1}$ is the reflection of the graph of $f$ across the line $y = x$. So we have:
+    The graph of $f ^{-1}$ is the reflection of the graph of $f$ across the line $y = x$. So we have:
     \[
         \frac d{dy}(f^{-1}(y))=\frac1{\frac{dy}{dx}}.
     \]
@@ -631,6 +630,60 @@ The Riemann sum, on the left, is approximately how far the object travels, and t
     \[ \int_{u_1}^{u_2}g(u)du=\int_{x_1}^{x_2}g(u(x))u^{\prime}(x)dx \]
     where $u'$ does not change sign. (If it does, we need to split the integral into pieces.)
 \end{enumerate}
+
+\subsubsection*{The Fundamental Theorem and the Mean Value Theorem}
+The \textbf{first fundamental theorem} can be weitten as:
+\[\Delta F = \int_a^b f(x)dx\]
+If we divide both sides by $\Delta x$, we get:
+\[\frac{\Delta F}{\Delta x} = \underbrace{\frac{1}{b-a}\int_a^b f(x)dx} _{\text{average value of } f(x)}\]
+We can rewrite \textbf{FTC1} as:
+\[\Delta F = Average(F')\Delta x \]
+And we rewrite \textbf{MVT} as:
+\[\Delta F = F'(c)\Delta x \quad \text{(Here $c$ is not specific) }\]
+Even if we don't know exactly what $c$ is, we can still get:
+\[\left(\min_{a<x<b}F'(x)\right)\Delta x\leq\Delta F=F'(c)\Delta x\leq\left(\max_{a<x<b}F'(x)\right)\Delta x.\]
+The \textbf{FTC1} gives us a little more information:
+\[\left(\min_{a<x<b}F'(x)\right)\Delta x\leq\Delta F=\text{Average}F'\Delta x\leq\left(\max_{a<x<b}F'(x)\right)\Delta x.\]
+
+\begin{Problem}
+    \textbf{The Mean Value Theorem and Estimation} \\
+    Given that $F'(x)  = \frac{1}{x+1}$ and $F(0) = 1$, the mean value theorem implies that $A < F(4) < B$ for which $A$ and $B$?
+\end{Problem}
+1. \textbf{MVT}:
+\[F(4) - F(0) = F'(c)(4 - 0)\]
+\[\frac{1}{5} < \frac{F(4) - F(0)}{4} < 1\]
+\[\frac{9}{5} < F(4) < 5\]
+2. \textbf{FTC1}:
+Based on the \textbf{FTC1}, we can get:
+\[F(4) - F(0) = \int_0^4 \frac{1}{x+1}dx\]
+Based on the graph of $\frac{1}{x+1}$, we can get:
+\[F(4)-F(0)=\int_0^4\frac{dx}{1+x}<\int_0^41dx=4 \text{ and } f(4) - f(0) = \int_0^4 \frac{dx}{1+x} > \int_0^4\frac{1}{5}dx = \frac{4}{5}\]
+Again we can get:
+\[\frac{9}{5}\text{(lower Riemann sum)} < F(4) < 5\text{(upper Riemann sum)}\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
