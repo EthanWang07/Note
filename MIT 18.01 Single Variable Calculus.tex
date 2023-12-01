@@ -764,13 +764,98 @@ Again we can get:
         Avg(f) &= \frac{1}{\pi}\int_{0}^{\pi}\sin \theta d\theta \\
         &= \frac{1}{\pi}\left(-\cos \theta\right)\Big|_{0}^{\pi} \\
         &= \frac{2}{\pi}
-    \end{align*}
-    
+    \end{align*} 
 \end{example}
 
+\subsubsection*{Weighted Average}
+\[\frac{\int_a^bf(x)w(x)dx}{\int_a^bw(x)dx}\]
 
+\begin{example}
+    \textbf{Boy Near a Dart Board}\label{boy-dartboard}\\
+    (cf. \href{https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/resources/mit18_01scf10_ses62d/}{OCW})
+\end{example}
 
+\subsubsection*{Numerical Integration}
+\begin{enumerate}
+    \item \textbf{Riemann Sums}
+    \item \textbf{Trapezoidal Rule}
+        % use a graph to show the trapezoidal rule
+        \begin{center}
+            \begin{tikzpicture}
+                % Draw the curve using plot and coordinates
+                \draw[blue, thick, domain=1:4] plot[smooth] coordinates {(1,0.84) (2,1.84) (3,0.84) (4,0.5)};
+            
+                % Draw the trapezoids
+                \draw[fill=gray!30] (1,0) -- (1,0.84) -- (2,1.84) -- (2,0) -- cycle;
+                \draw[fill=gray!30] (2,0) -- (2,1.84) -- (3,0.84) -- (3,0) -- cycle;
+                \draw[fill=gray!30] (3,0) -- (3,0.84) -- (4,0.5) -- (4,0) -- cycle;
+            
+                % Draw the x-axis
+                \draw[->] (-0.5,0) -- (5,0) node[right] {$x$};
+                % Draw the y-axis
+                \draw[->] (0,-0.5) -- (0,2) node[above] {$y$};
+            
+                % Add labels
+                \node at (1,-0.2) {$a$};
+                \node at (4,-0.2) {$b$};
+                \node at (1,0.84+0.5 ) {$f(a)$};
+                \node at (2,1.84+0.2) {$f(x_1)$};
+                \node at (2,-0.2) {$x_1$};
+                \node at (3,0.84+0.2) {$f(x_2)$};
+                \node at (3,-0.2) {$x_2$};
+                \node at (4,0.5+0.2) {$f(b)$};
+            \end{tikzpicture}
+        \end{center}
+        \[Area = \Delta x\left\{\frac{y_o+y_1}2+\frac{y_1+y_2}2+\frac{y_2+y_3}2+...+\frac{y_{n-1}+y_n}2\right\}\]
+        Notice that it's the average of the left and right Riemann sums.
+    \item \textbf{Simpson's Rule}
+        the essence of Simpson's rule is to approximate the function by a quadratic polynomial.
+\end{enumerate}
 
+\subsubsection*{Area Under the Bell Curve}
+In the example \ref{boy-dartboard}, we get the volume of revolution of the bell curve:
+\begin{align*}
+    V &= \int_0^\infty2\pi r\mathrm{~}e^{-r^2}dr\\
+    &= -\pi e^{-r^2}\Big|_0^\infty\\
+    &= \pi
+\end{align*}
+Then we let Q denote the area under the bell curve:
+\[ Q = \int_{-\infty}^\infty e^{-t^2}dt \]
+To calculate Q, we need to use a trick that we don't know yet:
+\[\boxed{Q^2  = V}\]
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.3\textwidth]{Slices.jpg}
+    \caption{Three-dimensional slices of the volume of rotation of $e^{-r^2}$.}
+\end{figure*}
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.3\textwidth]{topview.jpg}
+    \caption{Top view of a slice of the surface of revolution of $e^{-r^2}$.}
+\end{figure*}
+
+The formula for volume by slices is:
+\[ V = \int_-\infty^\infty A(y)dy \]
+then we fix $y= b$ and calculate $A(b)$. From the figure above, we can get: $b^2 + x^2 = r^2$. 
+The height of the surface at a point r units away from (0, 0) is given by: 
+\begin{align*}
+    height &= e^{-r^2} \\
+    &= e^{-(b^2 + x^2)} \\
+\end{align*}
+The area of the slice is:
+\begin{align*}
+    A(b) &= \int_{-b}^b e^{-(b^2 + x^2)}dx \\
+    &= e^{-b^2}\int_{-b}^b e^{-x^2}dx \\
+    &= e^{-b^2}Q
+\end{align*}
+Finally, we can get:
+
+\begin{align*}
+    V & =\quad\int_{-\infty}^{\infty}A(y)dy  \\
+    &=-\int_{-\infty}^{\infty}e^{-y^2}Qdy \\
+    &= Q\int_{-\infty}^{\infty}e^{-y^2}dy \quad\text{($Q$ is a constant)} \\
+    &= Q^2 \quad\text{(by definition, } Q=\int_{-\infty}^\infty e^{-t^2}dt).
+\end{align*}
 
 
 
