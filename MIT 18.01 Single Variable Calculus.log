@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.9)  14 NOV 2023 09:55
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.11.9)  1 DEC 2023 10:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -279,13 +279,13 @@ Package fontspec Info: Font family 'LatinModernMath(1)' created for font
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 12.
+(Font)              `operators' in the math version `normal' on input line 9.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/LatinModernMath(1)/m/n on input line 12.
+(Font)                  OT1/cmr/m/n --> TU/LatinModernMath(1)/m/n on input line 9.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 12.
+(Font)              `operators' in the math version `bold' on input line 9.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/LatinModernMath(1)/b/n on input line 12.
+(Font)                  OT1/cmr/bx/n --> TU/LatinModernMath(1)/b/n on input line 9.
 
 Package fontspec Info: Latin Modern Math scale = 1.0001.
 
@@ -343,13 +343,13 @@ Package fontspec Info: Font family 'LatinModernMath(2)' created for font
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 12.
+(Font)              `symbols' in the math version `normal' on input line 9.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> TU/LatinModernMath(2)/m/n on input line 12.
+(Font)                  OMS/cmsy/m/n --> TU/LatinModernMath(2)/m/n on input line 9.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 12.
+(Font)              `symbols' in the math version `bold' on input line 9.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> TU/LatinModernMath(2)/b/n on input line 12.
+(Font)                  OMS/cmsy/b/n --> TU/LatinModernMath(2)/b/n on input line 9.
 
 Package fontspec Info: Latin Modern Math scale = 0.9999.
 
@@ -395,13 +395,13 @@ Package fontspec Info: Font family 'LatinModernMath(3)' created for font
 (fontspec)             =6.0pt\relax \fontdimen 13\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 12.
+(Font)              `largesymbols' in the math version `normal' on input line 9.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> TU/LatinModernMath(3)/m/n on input line 12.
+(Font)                  OMX/cmex/m/n --> TU/LatinModernMath(3)/m/n on input line 9.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 12.
+(Font)              `largesymbols' in the math version `bold' on input line 9.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> TU/LatinModernMath(3)/b/n on input line 12.
+(Font)                  OMX/cmex/m/n --> TU/LatinModernMath(3)/b/n on input line 9.
  (c:/texlive/2023/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2023/10/14 v2.0e lastpage: 2.09 or 2e? (HMM)
  (c:/texlive/2023/texmf-dist/tex/latex/lastpage/lastpage2e.sty
@@ -896,37 +896,58 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 Invalid UTF-8 byte or sequence at line 3 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 3 replaced by U+FFFD.
 Package: anyfontsize 2007/11/22 anyfontsize.sty by pts
+) (c:/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2023/09/26 version 6.1.0 text color boxes
+ (c:/texlive/2023/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks51
+\verbatim@line=\toks52
+\verbatim@in@stream=\read3
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 30.
-\c@Problem=\count345
-\c@theorem=\count346
-\c@lemma=\count347
-\c@case=\count348
-\c@definition=\count349
-\c@example=\count350
+\tcb@titlebox=\box77
+\tcb@upperbox=\box78
+\tcb@lowerbox=\box79
+\tcb@phantombox=\box80
+\c@tcbbreakpart=\count345
+\c@tcblayer=\count346
+\c@tcolorbox@number=\count347
+\tcb@temp=\box81
+\tcb@temp=\box82
+\tcb@temp=\box83
+\tcb@temp=\box84
+) (c:/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.1.0'
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 32.
+\c@Problem=\count348
+\c@theorem=\count349
+\c@lemma=\count350
+\c@case=\count351
+\c@definition=\count352
+\c@example=\count353
  (./MIT 18.01 Single Variable Calculus.aux (./Title page for notes.aux))
 \openout1 = `"MIT 18.01 Single Variable Calculus.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -963,21 +984,21 @@ LaTeX Font Info:    ... okay on input line 133.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  TU/LatinModernMath(1)/m/n --> TU/lmr/m/n on input line 133.
+(Font)                  TU/LatinModernMath(1)/m/n --> TU/lmr/m/n on input line 128.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 133.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 128.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 133.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 128.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 133.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 128.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 133.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 128.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 133.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 128.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 133.
-\c@lstlisting=\count351
-Package hyperref Info: Link coloring ON on input line 133.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 128.
+\c@lstlisting=\count354
+Package hyperref Info: Link coloring ON on input line 128.
 (./MIT 18.01 Single Variable Calculus.out) (./MIT 18.01 Single Variable Calculus.out)
 \@outlinefile=\write5
 \openout5 = `"MIT 18.01 Single Variable Calculus.out"'.
@@ -1021,18 +1042,18 @@ File: logo-nju.jpg Graphic file (type bmp)
 
 
 ]
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 145.
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 140.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 160.
+(mdframed)              on input line 155.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 161.
-Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 182.
+(mdframed)              on input line 156.
+Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 177.
 File: logo-nju.jpg Graphic file (type bmp)
 <logo-nju.jpg>
  [3]
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 242.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 237.
 File: logo-nju.jpg Graphic file (type bmp)
 <logo-nju.jpg>
  [4]
@@ -1050,44 +1071,40 @@ File: logo-nju.jpg Graphic file (type bmp)
  [8]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 446.
+(mdframed)              on input line 441.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 447.
+(mdframed)              on input line 442.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 466.
+(mdframed)              on input line 461.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 467.
+(mdframed)              on input line 462.
 File: logo-nju.jpg Graphic file (type bmp)
 <logo-nju.jpg>
  [9]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 487.
+(mdframed)              on input line 482.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 491.
+(mdframed)              on input line 486.
 File: logo-nju.jpg Graphic file (type bmp)
 <logo-nju.jpg>
  [10]
 File: logo-nju.jpg Graphic file (type bmp)
 <logo-nju.jpg>
  [11]
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 577.
- (c:/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
-File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 File: logo-nju.jpg Graphic file (type bmp)
 <logo-nju.jpg>
  [12]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 602.
+(mdframed)              on input line 607.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 603.
+(mdframed)              on input line 608.
 File: logo-nju.jpg Graphic file (type bmp)
 <logo-nju.jpg>
  [13]
@@ -1096,13 +1113,30 @@ File: logo-nju.jpg Graphic file (type bmp)
  [14]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 649.
+(mdframed)              on input line 654.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 651.
+(mdframed)              on input line 656.
 File: logo-nju.jpg Graphic file (type bmp)
 <logo-nju.jpg>
- [15] 
+ [15]
+File: logo-nju.jpg Graphic file (type bmp)
+<logo-nju.jpg>
+ [16]
+Underfull \hbox (badness 10000) in paragraph at lines 755--756
+
+ []
+
+File: logo-nju.jpg Graphic file (type bmp)
+<logo-nju.jpg>
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 762--763
+
+ []
+
+File: logo-nju.jpg Graphic file (type bmp)
+<logo-nju.jpg>
+[18] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./MIT 18.01 Single Variable Calculus.aux (./Title page for notes.aux))
  ***********
@@ -1113,12 +1147,12 @@ Package rerunfilecheck Info: File `"MIT 18.01 Single Variable Calculus".out' has
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 30645 strings out of 474928
- 596342 string characters out of 5765087
+ 32894 strings out of 474928
+ 655569 string characters out of 5765087
  1944164 words of memory out of 5000000
- 52090 multiletter control sequences out of 15000+600000
- 568403 words of font info for 78 fonts, out of 8000000 for 9000
+ 54335 multiletter control sequences out of 15000+600000
+ 561150 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  104i,14n,114p,569b,979s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on MIT 18.01 Single Variable Calculus.pdf (15 pages).
+Output written on MIT 18.01 Single Variable Calculus.pdf (18 pages).

@@ -1,6 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Packages
 \documentclass[10pt, a4paper]{article}
 \usepackage[top=3cm, bottom=4cm, left=3.5cm, right=3.5cm]{geometry}
 \usepackage{sectsty} %设置章节标题的字体大小
@@ -22,6 +19,11 @@
 \usepackage{hyperref}
 \usepackage{setspace}
 \usepackage{anyfontsize} %字体大小
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\tcbuselibrary{theorems}
+
+
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -115,13 +117,6 @@ innertopmargin=\topskip,
 \newcommand{\tmtextbf}[1]{\text{{\bfseries{#1}}}}
 \newcommand{\tmtextit}[1]{\text{{\itshape{#1}}}}
 
-\newenvironment{itemizedot}{\begin{itemize} \renewcommand{\labelitemi}{$\bullet$}\renewcommand{\labelitemii}{$\bullet$}\renewcommand{\labelitemiii}{$\bullet$}\renewcommand{\labelitemiv}{$\bullet$}}{\end{itemize}}
-\catcode`\<=\active \def<{
-\fontencoding{T1}\selectfont\symbol{60}\fontencoding{\encodingdefault}}
-\catcode`\>=\active \def>{
-\fontencoding{T1}\selectfont\symbol{62}\fontencoding{\encodingdefault}}
-\catcode`\<=\active \def<{
-\fontencoding{T1}\selectfont\symbol{60}\fontencoding{\encodingdefault}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -598,6 +593,16 @@ During a trip, the average speed of a car is between the maximum and minimum spe
     \[\boxed{\int_a^bf(x)dx = F(b) - F(a) = F(x) \Big|_a^b}\]
 \end{theorem}
 
+\begin{proof}
+    We can define $G(x) = \int_a^x f(t)dt$. Then $G'(x) = f(x)$ by the \textbf{Second Fundamental Theorem of Calculus}.
+    Since $F'(x) = G'(x)$, we have $F(x) = G(x) + c$ for some constant $c$.
+    \begin{align*}
+        F(b)-F(a) &= G(b)+c-(G(a)+c) \\
+        &= G(b)-G(a) \\
+        &= \int_a^b f(t)dt
+    \end{align*}  
+\end{proof}
+
 \begin{Problem}
     \textbf{Area under one “hump” of sin(x).}
 \end{Problem}
@@ -657,14 +662,111 @@ The \textbf{FTC1} gives us a little more information:
 Based on the \textbf{FTC1}, we can get:
 \[F(4) - F(0) = \int_0^4 \frac{1}{x+1}dx\]
 Based on the graph of $\frac{1}{x+1}$, we can get:
-\[F(4)-F(0)=\int_0^4\frac{dx}{1+x}<\int_0^41dx=4 \text{ and } f(4) - f(0) = \int_0^4 \frac{dx}{1+x} > \int_0^4\frac{1}{5}dx = \frac{4}{5}\]
+\[F(4)-F(0)=\int_0^4\frac{dx}{1+x}<\int_0^41dx=4 \text{ and } F(4) - F(0) = \int_0^4 \frac{dx}{1+x} > \int_0^4\frac{1}{5}dx = \frac{4}{5}\]
 Again we can get:
 \[\frac{9}{5}\text{(lower Riemann sum)} < F(4) < 5\text{(upper Riemann sum)}\]
 
+\subsection{Second Fundamental Theorem, Areas, Volumes}
+\begin{theorem}
+    \textbf{Second Fundamental Theorem of Calculus} \\
+    If $f$ is continuous and $ G(x) = \int_a^x f(t)dt$, then 
+    \[\boxed{G'(x) = f(x)}\]
+    G(x) solves the differential equation $G'(x) = f(x)$ and $G(a) = 0$.
+\end{theorem}
 
+\begin{proof}
+    Since G(x) is the area under the curve $y = f(t)$ from $t = a$ to $t = x$, we can write:
+    \[\Delta G \approx f(x)\Delta x\]
+    then we can get $\frac{\Delta G}{\Delta x} \approx f(x)$, which means:
+    \[G'(x) = \lim_{\Delta x\to0}\frac{\Delta G}{\Delta x} = f(x)\] 
+\end{proof}    
 
+\begin{example}
+    \textbf{Log of a Product} \\
+    L(x) is an alternatively defined logarithm function.Show that $L(ab) = L(a) + L(b)$.
+    \begin{align*}
+        L(ab) &= \int_1^{ab}\frac{1}{x}dx \\
+        &= \int_1^a\frac{1}{x}dx + \int_a^{ab}\frac{1}{x}dx \\
+        &= \int_1^a\frac{1}{x}dx + \int_1^b\frac{1}{u}du \quad (u = ax) \\
+        &= L(a) + L(b)
+    \end{align*}
+\end{example}
 
+\subsubsection*{Area between two curves}
+\begin{center}
+\begin{tikzpicture}
+        % Define the functions
+    \def\fOne{0.5 * \x^2}
+    \def\fTwo{0.2 * \x^3}
 
+    % Draw the curves
+    \draw[domain=0:2, smooth, variable=\x, blue] plot ({\x}, {\fOne});
+    \draw[domain=0:2, smooth, variable=\x, red] plot ({\x}, {\fTwo});
+
+    % Fill the area between the curves
+    \fill[gray!30] (0,0) -- plot[domain=0:2, smooth, variable=\x] ({\x}, {\fOne}) -- plot[domain=2:0, smooth, variable=\x] ({\x}, {\fTwo}) -- cycle;
+
+    % Add labels and axes
+    \draw[->] (-0.5,0) -- (3,0) node[right] {$x$};
+    \draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
+    \node[blue] at (1.5,2.5) {$y = f(x)$};
+    \node[red] at (1.5,0.8) {$y = g(x)$};
+\end{tikzpicture}
+\end{center}
+
+ By using the idea of Riemann sum, we can get the area between two curves:
+\[ A=\int_a^b\left(f(x)-g(x)\right)dx\]
+\begin{example}
+    \textbf{Find the area between $x = y^2$ and $y = x - 2$}\\
+    Hard Way: Slice the region into vertical strips and integrate with respect to $y$.\\
+    Easy Way: Slice the region into horizontal strips and integrate with respect to $x$.
+\end{example}
+
+\begin{example}
+    \textbf{Volume of a Sphere}
+    \begin{center}
+        \begin{tikzpicture}
+            % Draw the circle
+            \draw (2,0) circle [radius=2];
+        
+            % Add labels and axes
+            \draw[->] (-1,0) -- (5,0) node[right] {$x$};
+            \draw[->] (0,-2.5) -- (0,2.5) node[above] {$y$};
+            \node[fill=black, circle, inner sep=2pt, label={above right:$(a,0)$}] at (2,0) {};
+        \end{tikzpicture}
+    \end{center}
+    \begin{align*}
+        V &= \int_{0}^{2a} \pi y^2dx \\
+        &= \pi\int_{0}^{2a} (a^2 - x^2)dx \\
+        &= \pi\left(a^2x - \frac{x^3}{3}\right)\Big|_{0}^{2a} \\
+        &= \frac{4}{3}\pi a^3
+    \end{align*}
+\end{example}
+
+\subsection{Average Value, Probability and Numerical Integration}
+\subsubsection*{Average Value of a Function}
+\begin{definition}
+    \textbf{Average Value of a Function} \\
+    The average value of a function $f$ on the interval $[a, b]$ is:
+    \[\boxed{f_{avg} = \frac{1}{b-a}\int_a^b f(x)dx}\]
+\end{definition}
+
+\begin{example}
+    \textbf{Average Height of a unit semicircle (with respect to horizontal distance)} \\
+    \begin{align*}
+        Avg(f) &= \frac{1}{2}\int_{-1}^{1}\sqrt{1-x^2}dx \\
+        &= \frac{1}{2}\text{Area of a unit semicircle} \\
+        &= \frac{\pi}{4}
+    \end{align*}
+
+    \textbf{Average with Respect to Arc length} \\    
+    \begin{align*}
+        Avg(f) &= \frac{1}{\pi}\int_{0}^{\pi}\sin \theta d\theta \\
+        &= \frac{1}{\pi}\left(-\cos \theta\right)\Big|_{0}^{\pi} \\
+        &= \frac{2}{\pi}
+    \end{align*}
+    
+\end{example}
 
 
 

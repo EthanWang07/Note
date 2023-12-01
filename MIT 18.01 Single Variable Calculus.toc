@@ -7,3 +7,5 @@
 \contentsline {subsection}{\numberline {2.3}Mean Value Theorem, Antiderivatives and Differential Equations}{11}{subsection.2.3}%
 \contentsline {section}{\numberline {3}The Definite Integral and its Applications}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Definition of the Definite Integral and First Fundamental Theorem}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Second Fundamental Theorem, Areas, Volumes}{16}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Average Value, Probability and Numerical Integration}{17}{subsection.3.3}%
