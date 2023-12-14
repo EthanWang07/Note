@@ -857,7 +857,149 @@ Finally, we can get:
     &= Q^2 \quad\text{(by definition, } Q=\int_{-\infty}^\infty e^{-t^2}dt).
 \end{align*}
 
+\section{Techniques of Integration}
+\subsection{Trigonometric Powers, Trigonometric Substitution and Completing the Square}
+\begin{example}
+    \textbf{Integrating $\int \sin ^3 x dx$} \\
+    We can use the identity $\sin ^2 x = 1 - \cos ^2 x$ to rewrite the integral as:
+    \begin{align*}
+        \int \sin ^3 x dx &= \int \sin x (1 - \cos ^2 x)dx \\
+        &= \int \sin x dx - \int \sin x \cos ^2 x dx \\
+        &= -\cos x - \int \sin x \cos ^2 x dx
+    \end{align*}
+    Then we can use the substitution $u = \cos x$ to solve the second integral:
+    \begin{align*}
+        \int \sin x \cos ^2 x dx &= \int -u^2 du \\
+        &= -\frac{u^3}{3} + C \\
+        &= -\frac{\cos ^3 x}{3} + C
+    \end{align*}
+    Finally, we can get:
+    \[\int \sin ^3 x dx = -\cos x + \frac{\cos ^3 x}{3} + C\]
+\end{example}
 
+\subsubsection*{Trig Substitution}
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        If your integrand contains: & Make substitutions: & So that: \\
+        \hline
+        $\sqrt{a^2-x^2}$ & $x = a\sin\theta$ & $dx = a\cos\theta d\theta$ \\
+    
+        $\sqrt{a^2+x^2}$ & $x = a\tan\theta$ & $dx = a\sec^2\theta d\theta$ \\
+    
+        $\sqrt{x^2-a^2}$ & $x = a\sec\theta$ & $dx = a\sec\theta\tan\theta d\theta$ \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection{Partial Fractions, Integration by Parts, Arc Length, and Surface Area}
+
+\subsubsection*{Introduction to the Cover-up Method}
+Take an integral for example:
+\[\int \frac{4x -1}{x^2 + x - 2}dx\]
+\begin{enumerate}
+    \item First we factor the denominator: $x^2 + x - 2 = (x + 2)(x - 1)$:
+    \item Next we write the fraction as a sum of two fractions:
+    \[\frac{4x -1}{x^2 + x - 2} = \frac{A}{x - 1} + \frac{B}{x + 2}\]
+    \item We solve for $A$ by multiplying both sides by $x - 1$:
+    \[ \frac{4x-1}{x+2} = A + \frac{B(x-1)}{x+2} \]
+    then we plug in $x = 1$ to get $A$:
+    \[\frac{4 - 1}{1 + 2} = A + 0 \Longrightarrow A = 1\]
+    By applying the same method, we can get $B = 3$.
+\end{enumerate}
+
+\subsubsection*{Repeated Factors}
+\begin{example}
+    \textbf{$\frac{x^2 + 2}{(x-1)^2 (x+2)}$}\\
+    In general, when there is a repeated factor in the denominator, we need to add a term for each power of the factor up to the power of the factor in the denominator:
+    \[
+        \frac{x^2 + 2}{(x-1)^2 (x+2)} = \frac{A}{x-1} + \frac{B}{(x-1)^2} + \frac{C}{x+2} 
+    \]
+    then we can apply the cover-up method to solve for $A$, $B$ and $C$.
+\end{example}
+
+\subsubsection*{Quadratic Factors}
+\begin{example}
+    \textbf{$\frac{x^2}{(x-1)(x^2 + 1)}$}\\
+    The setup for this example is:
+    \[
+        \frac{x^2}{(x-1)(x^2 + 1)} = \frac{A}{x-1} + \frac{Bx + C}{x^2 + 1}
+    \]
+\end{example}
+
+\subsubsection*{Introduction to Integration by Parts}
+\begin{theorem}
+    \textbf{Integration by Parts} \\
+    If $u$ and $v$ are differentiable functions of $x$, then:
+    \[\boxed{\int uv'dx\quad=\quad uv-\int u'vdx}\]
+\end{theorem}
+
+\begin{example}
+    \textbf{$\int \ln x dx$}
+    \begin{align*}
+        \int \ln x dx &= \int 1 \cdot \ln x dx \\
+        &= x \ln x - \int x \cdot \frac{1}{x} dx \\
+        &= x \ln x - \int 1 dx \\
+        &= x \ln x - x + C
+    \end{align*}
+\end{example}
+
+\begin{example}
+    \textbf{$\int (\ln x)^2 dx$}
+    \begin{align*}
+        \int (\ln x)^2 dx &= \int 1 \cdot (\ln x)^2 dx \\
+        &= x (\ln x)^2 - \int x \cdot 2 \ln x \cdot \frac{1}{x} dx \\
+        &= x (\ln x)^2 - 2 \int \ln x dx \\
+        &= x (\ln x)^2 - 2 (x \ln x - x) + C \\
+        &= x (\ln x)^2 - 2 x \ln x + 2x + C
+    \end{align*}
+\end{example}
+
+\subsubsection*{Introduction to Arc Length}
+\begin{definition}
+    \textbf{Arc Length} \\
+    An arc can be divided into many small pieces, each of which is approximately a straight line. 
+    By applying the Pythagorean Theorem, we can get:
+    \[(\Delta s )^2 \approx (\Delta x)^2 + (\Delta y)^2\]
+    then we can get:
+    \[(ds)^2 = (dx)^2 + (dy)^2\]
+    \[\boxed{ds = \sqrt{1 + (y')^2}dx}\]
+
+    The arc length of a curve $y = f(x)$ from $x = a$ to $x = b$ is:
+    \[\boxed{L = \int_a^b \sqrt{1 + (y')^2}dx}\]
+\end{definition}
+
+\begin{example}
+    \textbf{Circular Arc Length} \\
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{arc length.jpg}
+    \end{center}
+    $y= \sqrt{1-x^2}$ describes the upper half of a circle with radius 1. We use \alpha to denote the arc length along the circle.
+    \begin{align*}
+        y' &= \frac{-x}{\sqrt{1-x^2}} \\
+        ds &= \sqrt{1 + \frac{x^2}{1-x^2}}dx \\
+        \alpha &= \int_{0}^{a} \frac{dx}{\sqrt{1-x^2}} \\
+        &= \sin^{-1} x \Big|_{0}^{a} \\
+        (sin \alpha &= a)
+    \end{align*}
+\end{example}
+
+\subsubsection*{Introduction to Surface Area}
+\begin{example}
+    \textbf{Surface Area of a Parabola} \\
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{parabola rotation.jpg}
+    \end{center}
+    \begin{align*}
+        S &= \int_{0}^{a} 2 \pi y ds \\
+        &= 2 \pi \int_{0}^{a} y \sqrt{1 + (y')^2} dx \\
+        &= 2 \pi \int_{0}^{a} x^2 \sqrt{1 + (2x)^2} dx \\
+    \end{align*}
+\end{example}
+
+
+
+\subsection{Parametric Equations and Polar Coordinates}
 
 
 
