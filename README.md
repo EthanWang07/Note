@@ -5,4 +5,4 @@
 
 2. 2023/11/11- [Econometrics](https://github.com/EthanWang07/Note/blob/main/metrics.pdf)
 
-    基于 *Mastering 'Metrics: The Path from Cause to Effect* 进行整理
+    基于 *Mastering 'Metrics: The Path from Cause to Effect* 进行整理。
