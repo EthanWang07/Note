@@ -11,10 +11,9 @@
 
 \begin{document}
 
-\section{Randomized Trials (随机实验)} 
-\boxed{\text{Causal Effect (因果效应): } Y_{1i} - Y_{0i}} \\
-
-If we want to find the causal effect of a treatment, naturally we need to compare the outcome of the treatment group and the control group.\\
+\section{Randomized Trials} 
+\subsection{Causal Effect}
+Difference between the treatment group and the control group.
 First we can construct a dummy variable $D_i$ to indicate whether the $i$-th component is in the treatment group or the control group:
 \[D_i = \begin{cases}
 1, & \text{if the $i$-th component is in the treatment group} \\
@@ -22,7 +21,7 @@ First we can construct a dummy variable $D_i$ to indicate whether the $i$-th com
 \end{cases}\]
 
 \[\text{Diffenence in group means} = Avg_n[Y_{1i} \mid D_i = 1] - Avg_n[Y_{0i} \mid D_i = 0] \]
-But this equation is not what we are looking for. (Why?) We use \kappa to denote the effect of the treatment, then we have:
+But this equation is not what we are looking for. (Why? Not the comparasion between apples and apples.) We use \kappa to denote the effect of the treatment, then we have:
 \[ Y_{1i} = Y_{0i} + \kappa \]
 \begin{align*}
     \text{Diffenence in group means} &= Avg_n[Y_{1i} \mid D_i = 1] - Avg_n[Y_{0i} \mid D_i = 0] \\
@@ -30,10 +29,17 @@ But this equation is not what we are looking for. (Why?) We use \kappa to denote
     &= \kappa + \{Avg_n[Y_{0i} \mid D_i = 1] - Avg_n[Y_{0i} \mid D_i = 0]\}
 \end{align*}
 According to this, the difference between the two groups can be written as:
-\[\boxed{\text{Diffenence in group means} = \text{Average causal effect} + \text{Section bias (选择偏误)}}\]  
+\[\boxed{\text{Diffenence in group means} = \text{Average causal effect} + \text{Section bias }}\]  
 
-\subsection{统计推断基础}
-样本均值的无偏性：$E[\bar{Y}] = E[Y_i]$
-
+\subsection{Fundamental Knowledge of Inference}
+\begin{itemize}
+    \item \textbf{Unbiasedness of the sample mean:} $E[\bar{Y}] = E[Y_i]$
+    \item \textbf{Variance of the sample mean:} $Var[\bar{Y}] = \frac{\sigma^2_Y}{n}$
+    \item \textbf{the Estimated standard error:} $\hat{SE}(\bar{Y}) = \frac{S(Y_i)}{\sqrt{n}}$
+    \item \textbf{the Estimated standard error of the difference in means:} \\
+    $\hat{SE}(\bar{Y}_1 - \bar{Y}_0) = \sigma_Y \sqrt{\frac{1}{n_1} + \frac{1}{n_0}}$
+    \item \textbf{the t-statistic for the difference in means:} \\
+    $t(\mu) = \frac{\bar{Y}_1 - \bar{Y}_0 - \mu}{\hat{SE}(\bar{Y}_1 - \bar{Y}_0)}$
+\end{itemize} 
 
 \end{document}
